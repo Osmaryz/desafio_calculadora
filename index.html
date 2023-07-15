@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Desafío Calculando</title>
+</head>
+
+<body>
+    <div class="caja_principal">
+        <div class="container_tarjeta">
+            <img src="assets\img\gemstone-g7f65b95a7_1280.jpeg" alt="" />
+            <select name="" id="ingreso_data_color" class="ingreso_data">
+                <option value="">Selecciona un color</option>
+                <option value="red">Rojo</option>
+                <option value="blue">Azul</option>
+                <option value="brown">Café</option>
+                <option value="purple">Morado</option>
+                <option value="yellow">Amarillo</option>
+                <option value="orange">Naranja</option>
+            </select>
+            <input placeholder="Cantidad" type="number" id="ingreso_data_cantidad" class="ingreso_data" />
+            <h3>$30.000.-CLP</h3>
+            <button id="boton_calcular" onclick="
+/*Definición de variables para la multiplicación del número seleccionado y el valor del producto */
+var usuario_cantidad = document.getElementById('ingreso_data_cantidad').value;
+var valor_total = (usuario_cantidad * 30000);
+var precio_total = document.querySelector ('#precio_total');
+precio_total.innerHTML = '$' + valor_total +' CLP'; 
+var cantidad_final = document.querySelector ('#cantidad_seleccionada');
+cantidad_final.innerHTML = usuario_cantidad;
+
+/*Definición de variables de color seleccionado por el usuario */
+var color_elegido = document.querySelector('#ingreso_data_color');
+var result_color_selection = document.getElementById ('result_color_selection');
+result_color_selection.style.backgroundColor = color_elegido.value;
+"> Calcular Total </button>
+        </div>
+        <div id="resultado">
+            <p>Total : <span id="precio_total"></span></p>
+            <p>Cantidad : <span id="cantidad_seleccionada"></span></p>
+            <p>Color :</p>
+            <div id="result_color_selection"></div>
+        </div>
+    </div>
+    <script src="assets\js\js.js"></script>
+</body>
+
+</html>
